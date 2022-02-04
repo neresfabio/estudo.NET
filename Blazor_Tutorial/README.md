@@ -50,3 +50,4 @@ O "dotnet watch" comando compilará e iniciará o aplicativo e, em seguida, atua
     dotnet watch
 ~~~
 O site abrirá no seu navegador!
+![Site](https://github.com/neresfabio/estudo.NET/blob/master/Blazor_Tutorial/BlazorApp/images/Captura%20de%20tela%20de%202022-02-03%2020-45-36.png)
