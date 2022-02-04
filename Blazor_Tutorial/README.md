@@ -51,3 +51,60 @@ O "dotnet watch" comando compilará e iniciará o aplicativo e, em seguida, atua
 ~~~
 O site abrirá no seu navegador!
 ![Site](https://github.com/neresfabio/estudo.NET/blob/master/Blazor_Tutorial/BlazorApp/images/Captura%20de%20tela%20de%202022-02-03%2020-45-36.png)
+
+## Componentes
+
+>Counter: por padrão no layout inicial temos um botão que conta as vezes que o mesmo foi precionado.
+
+No diretorio/pasta "Pages" esta o componente Counter.razor
+
+>Crie um novo componente no Index.razor, pode ser ali pela linha 11.
+
+~~~
+<Counter/>
+~~~
+
+## Modificar o componente
+Os parâmetros do componente são especificados usando atributos ou conteúdo filho, que permitem definir propriedades no componente filho. Defina um parâmetro no Countercomponente para especificar quanto ele incrementa a cada clique de botão:
+
+Adicione uma propriedade pública para IncrementAmountcom um [Parameter]atributo.
+Altere o IncrementCountmétodo para usar o IncrementAmountao incrementar o valor de currentCount.
+O código a seguir mostra como conseguir isso. As linhas destacadas mostram as alterações.
+
+~~~
+@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    [Parameter]
+    public int IncrementAmount { get; set; } = 1;
+
+    private void IncrementCount()
+    {
+        currentCount += IncrementAmount;
+    }
+} 
+~~~
+
+Agora no "Index.razor", atualize o "Counter" elemento para adicionar um "IncrementAmountatributo" que altera o valor do incremento para dez, conforme mostrado pela linha destacada no código a seguir:
+
+~~~ 
+<Counter IncrementAmount = "10"/> 
+~~~
+
+O Index componente agora tem seu próprio contador que é incrementado em dez cada vez que o botão Clique em mim é selecionado, conforme mostrado na imagem a seguir. O Counter componente ( Counter.razor) em /countercontinua a aumentar em um.
+
+
+
+
+
+
